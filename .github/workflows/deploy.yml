@@ -19,5 +19,5 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
     - run: |
-        docker build . -t tdonaworth/dd-import:${{ github.sha }} -t tdonaworth/dd-import:latest
+        docker build -f ./docker/Dockerfile . -t tdonaworth/dd-import:${{ github.sha }} -t tdonaworth/dd-import:latest
         docker push -a tdonaworth/dd-import

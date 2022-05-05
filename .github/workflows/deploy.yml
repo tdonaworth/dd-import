@@ -13,11 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: azure/docker-login@v1
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
       with:
-        login-server: index.docker.io
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
+        logout: true
     - run: |
         docker build -f ./docker/Dockerfile . -t tdonaworth/dd-import:${{ github.sha }} -t tdonaworth/dd-import:latest
         docker push -a tdonaworth/dd-import

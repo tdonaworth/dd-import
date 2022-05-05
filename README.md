@@ -73,6 +73,7 @@ All parameters need to be provided as environment variables
 | DD_BUILD_ID           | Optional           | -                | |
 | DD_COMMIT_HASH        | Optional           | -                | |
 | DD_BRANCH_TAG         | Optional           | -                | |
+| DD_SCAN_CONFIG_ID     | Optional           | -                | The ID associated with the Engagement API Scan Configuration (ex: SonarQube)|
 
 ### Usage
 
